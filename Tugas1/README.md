@@ -52,7 +52,7 @@ Tugas ini merupakan implementasi socket programming menggunakan bahasa C. Progra
 
 1. **Client Output (Satu Client):**
 <br>
-   ![Client1](./assets/client1.png)
+   ![Client1](./assets/download.png)
 
 2. **Client Output (Dua Client - Terminal 1):**
 <br>
