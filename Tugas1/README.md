@@ -52,23 +52,23 @@ Tugas ini merupakan implementasi socket programming menggunakan bahasa C. Progra
 
 1. **Client Output (Satu Client):**
 <br>
-   ![image](assets/images/clien1.JPG)
+   ![image](assets/images/client1.JPG)
 
 2. **Client Output (Dua Client - Terminal 1):**
 <br>
-   ![Client21](/assets/client21.png)
+   ![image](assets/images/client21.png)
 
 3. **Client Output (Dua Client - Terminal 2):**
 <br>
-   ![Client22](./assets/client22.png)
+   ![image](assets/images/client22.png)
 
 4. **Server Output:**
 <br>
-   ![Server](./assets/server.png)
+   ![image](assets/images/server.png)
 
 5. **Data Captured in Wireshark:**
 <br>
-   ![Wireshark](./assets/data_wireshark.png)
+   ![image](assets/images/data_wireshark.png)
 ---
 
 ## 🔧 Catatan
