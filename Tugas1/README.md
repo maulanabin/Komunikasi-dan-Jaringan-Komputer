@@ -67,7 +67,7 @@ Tugas ini merupakan implementasi socket programming menggunakan bahasa C. Progra
    ![image](/Tugas1/assets/server.png)
 
 6. **Data Captured in Wireshark:**
-<br>
+
    ![image](/Tugas1/assets/data_wireshark.png)
 ---
 
