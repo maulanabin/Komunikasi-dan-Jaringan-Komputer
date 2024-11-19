@@ -56,19 +56,19 @@ Tugas ini merupakan implementasi socket programming menggunakan bahasa C. Progra
 
 3. **Client Output (Dua Client - Terminal 1):**
 
-   ![image](/assets/client21.png)
+   ![image](/Tugas1/assets/client21.png)
 
 4. **Client Output (Dua Client - Terminal 2):**
 
-   ![image](/assets/client22.png)
+   ![image](/Tugas1/assets/client22.png)
 
 5. **Server Output:**
 
-   ![image](/assets/server.png)
+   ![image](/Tugas1/assets/server.png)
 
 6. **Data Captured in Wireshark:**
 <br>
-   ![image](/assets/data_wireshark.png)
+   ![image](/Tugas1/assets/data_wireshark.png)
 ---
 
 ## 🔧 Catatan
