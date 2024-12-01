@@ -6,7 +6,7 @@ This document describes a TCP segment analysis based on a question related to a 
 
 ---
 
-## 1️⃣ Pertanyaan dan Jawaban
+## 1️⃣ Question and Answer
 
 ### 1. **What is the IP address and TCP port number used by your client computer (source) to transfer the file to gaia.cs.umass.edu?**  
 **Answer:**  
@@ -123,6 +123,6 @@ This information is crucial in understanding how TCP optimizes network bandwidth
 
 ---
 
-### 📈 Kesimpulan
+### 📈 Conclusion
 This analysis provides insight into the TCP workflow, including connection initiation, data segment management, and RTT calculation. These observations help study network performance and TCP flow optimization in real scenarios.
 
