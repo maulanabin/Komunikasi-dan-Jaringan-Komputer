@@ -117,7 +117,7 @@ Jalankan aplikasi Google Chrome, pilih **Inspect Element - Network**.
 
   Akses URL berikut di Google Chrome: `https://localhost:8443`
 
-  ![http2](./images/Gbr3.png)
+  ![http2](./images/Gbr2.png)
 
   Pada tab Network, Anda dapat melihat detail permintaan dan respons yang menggunakan protokol HTTP/2.0.
 
@@ -127,7 +127,7 @@ Jalankan aplikasi Wireshark kemudian pilih Capture Interface yang sesuai, sepert
 
   Berikut adalah paket yang ditangkap dari pengujian web server dengan HTTP/1.1:
 
-  ![http1](./images/Gbr2.png)
+  ![http1](./images/Gbr3.png)
 
   Pada capture paket Wireshark di atas, protokol yang digunakan adalah TCP. HTTP/1.1 menggunakan koneksi yang persisten dan dapat menangani beberapa permintaan dalam satu koneksi.
 
