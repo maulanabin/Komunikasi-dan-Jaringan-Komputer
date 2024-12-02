@@ -110,10 +110,10 @@ Berikut adalah hasil analisis alur data TCP yang dirangkum dalam tabel:
 Berikut adalah visualisasi flow graph yang diambil dari hasil analisis menggunakan Wireshark:
 
 ### Flow Graph 1
-![Flow Graph 1](wow1.png)
+![Flow Graph 1](/Tugas2/wow1.PNG)
 
 ### Flow Graph 2
-![Flow Graph 2](wow2.png)
+![Flow Graph 2](/Tugas2/wow2.PNG)
 
 
 ---
