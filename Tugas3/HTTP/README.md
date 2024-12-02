@@ -6,13 +6,13 @@
 # 📦 Membuat HTTP/1.1 dan HTTP/2.0 Server Menggunakan Docker dan NGINX
 ## By: Maulana Bintang Irfansyah - 1224800005
 
-Tugas ini bertujuan untuk membuat server HTTP/1.1, HTTP/2.0, dan HTTP/3.0 menggunakan Docker dan NGINX yang dikonfigurasi untuk menyajikan konten statis tanpa SSL, untuk kesederhanaan. Server ini akan mendengarkan pada port 80 DAN 443 dan melayani halaman browser.
+Tugas ini bertujuan untuk membuat server HTTP/1.1 dan HTTP/2.0, dan menggunakan Docker dan NGINX yang dikonfigurasi untuk menyajikan konten statis tanpa SSL, untuk kesederhanaan. Server ini akan mendengarkan pada port 80 DAN 443 dan melayani halaman browser.
 
 ---
 
 ## 📜 Pendahuluan
 
-Proyek ini bertujuan untuk memberikan pemahaman praktis mengenai cara membuat server HTTP/1.1, HTTP/2.0, dan HTTP/3.0 menggunakan Docker dan NGINX.
+Proyek ini bertujuan untuk memberikan pemahaman praktis mengenai cara membuat server HTTP/1.1 dan HTTP/2.0 menggunakan Docker dan NGINX.
 
 ---
 
@@ -36,7 +36,7 @@ Proyek ini bertujuan untuk memberikan pemahaman praktis mengenai cara membuat se
 
 ## 2. Konfigurasi Docker
 
-Pada bagian ini, kami menggunakan web server **Nginx** karena mendukung penggunaan HTTP/1.1, HTTP/2.0, dan HTTP/3.0. Sebelum mulai konfigurasi, pastikan Docker Engine sudah berjalan.
+Pada bagian ini, kami menggunakan web server **Nginx** karena mendukung penggunaan HTTP/1.1 dan HTTP/2.0. Sebelum mulai konfigurasi, pastikan Docker Engine sudah berjalan.
 
 **a. Unduh Image**
 
@@ -90,29 +90,51 @@ docker pull nginx:latest
     ```
 
 3. **Create Container**  
-   Container untuk HTTP/1.1 perintah yang dijalankan adalah docker create --name nginx-http1 -p 80:80 nginx:latest
-
-   Container untuk HTTP/2.0 perintah yang dijalankan adalah docker create --name nginx-http1 -p 8888:80 nginx:latest
-
-**4. Analisis Paket di WireShark**
-
-Jalankan aplikasi Wireshark kemudian pilih Capture Interface nya adalah **Adapter for loopback traffic capture**.
-
--   **HTTP/1.1**
-
-    berikut merupakan paket yang ditangkap dari pengujian web server dengan HTTP/1.1
-    ![http1](./img/capture_http1.jpg)
-
-    pada capture paket Wireshark diatas, protocol nya adalah TCP. HTTP/1.1 bekerja diatas protocol TCP.
-    
-
--   **HTTP/2.0**
-
-    berikut merupakan paket yang ditangkap dari pengujian web server dengan HTTP/1.1
-    ![http2](./img/capture_http2.jpg)
-
-    pada cature paket Wireshark diatas, terdapat 2 protocol yaitu TCP dan TLSv1.3. Kedua protokol, TCP dan TLSv1.3, muncul dalam capture Wireshark saat menggunakan HTTP/2.0 karena HTTP/2.0 beroperasi di atas TCP untuk pengiriman data dan di atas TLS untuk enkripsi.
+   Container untuk HTTP/1.1 perintah yang dijalankan adalah docker create --name nginx-http1 
+   
+   docker run -d -p 8080:80 nginx-http1
 
 
-4. **Visualisasi Flow Graph**  
-   Gunakan fitur `Statistics > Flow Graph` di Wireshark untuk menghasilkan grafik alur seperti contoh di bawah ini.
+   Container untuk HTTP/2.0 perintah yang dijalankan adalah docker create --name nginx-http1 
+
+   docker run -d -p 8443:443 nginx-http
+
+---
+
+### 4. Analisis Pengujian Web Server di Google Chrome dan Paket di Wireshark
+
+Jalankan aplikasi Google Chrome, pilih **Inspect Element - Network**.
+
+- **HTTP/1.1**
+
+  Akses URL berikut di Google Chrome: `http://localhost:8080`
+
+  ![http1](./images/Gbr1.png)
+
+  Pada tab Network, Anda dapat melihat detail permintaan dan respons yang menggunakan protokol HTTP/1.1.
+
+- **HTTP/2.0**
+
+  Akses URL berikut di Google Chrome: `https://localhost:8443`
+
+  ![http2](./images/Gbr3.png)
+
+  Pada tab Network, Anda dapat melihat detail permintaan dan respons yang menggunakan protokol HTTP/2.0.
+
+Jalankan aplikasi Wireshark kemudian pilih Capture Interface yang sesuai, seperti **Adapter for loopback traffic capture**.
+
+- **HTTP/1.1**
+
+  Berikut adalah paket yang ditangkap dari pengujian web server dengan HTTP/1.1:
+
+  ![http1](./images/Gbr2.png)
+
+  Pada capture paket Wireshark di atas, protokol yang digunakan adalah TCP. HTTP/1.1 menggunakan koneksi yang persisten dan dapat menangani beberapa permintaan dalam satu koneksi.
+
+- **HTTP/2.0**
+
+  Berikut adalah paket yang ditangkap dari pengujian web server dengan HTTP/2.0:
+
+  ![http2](./images/Gbr4.png)
+
+  Pada capture paket Wireshark di atas, terdapat dua protokol yaitu TCP dan TLSv1.3. HTTP/2.0 menggunakan multiplexing untuk mengirimkan beberapa permintaan dan respons secara bersamaan melalui satu koneksi TCP.
